@@ -1,0 +1,424 @@
+@import "variables.css";
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "quasimoda";
+  font-family: var(--main);
+}
+
+.flex-wrapper {
+  flex: 1 0 auto;
+  background-image: url("../images/marble-texture.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+  padding: 6rem 0;
+}
+
+header {
+  background-color: #5e4b43;
+  background-color: #c3ae9f;
+  background-color: var(--navbar);
+  background-repeat: no-repeat;
+  box-shadow: rgba(217, 206, 199, 0.15) 0px 2px 8px 0px;
+}
+
+.navbar {
+  width: 85%;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0.6rem 0;
+}
+
+.nav-left-container {
+  display: flex;
+}
+
+.brand-logo {
+  width: 250px;
+  padding: 0.15rem 0 1rem 0;
+}
+
+.links-container {
+  align-items: center;
+  display: none;
+}
+
+.nav-link {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-right: 1.5rem;
+  padding: 0;
+  position: relative;
+}
+
+.active-link {
+  font-weight: bold;
+}
+
+.active-link::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--primary);
+}
+
+.nav-link::after {
+  content: "";
+  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  transition: width 0.2s ease-in-out;
+  background: transparent;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  background: var(--primary);
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.icons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-icon {
+  width: 3rem;
+  transition: scale 0.3s ease-in-out;
+}
+
+.nav-icon:hover {
+  scale: 1.1;
+}
+
+.dropdown-menu {
+  display: none;
+  background-color: var(--navbar);
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.dropdown-links-container {
+  padding-left: 7.5%;
+}
+
+.dropdown-links-container a:hover {
+  border-bottom: 2px solid transparent;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 6rem;
+}
+
+.products {
+  padding-top: 3rem;
+}
+
+.products-header {
+  text-align: left;
+  padding-top: 0;
+}
+
+.content-container {
+  height: 100%;
+  min-height: 600px;
+  border-radius: 5px 5px 0 0;
+  background-color: #ffffff99;
+  box-shadow: rgba(217, 206, 199, 0.15) 0px 2px 8px 0px;
+  padding-bottom: 2rem;
+}
+
+.main-prod-image {
+  margin-bottom: 3rem;
+  border: 15px;
+}
+
+.main-prod-image img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  filter: saturate(95%) brightness(103%) contrast(95%)
+    drop-shadow(0px 8px 5px rgb(217 206 199 / 1));
+}
+
+/* .main-prod-image {
+  background: url("../images/lounge-main.jpg") no-repeat center top;
+  background-size: contain;
+  width: 100%;
+  height: 800px;
+  margin-bottom: 6rem;
+  padding: 0;
+  filter: blur()
+} */
+
+h1 {
+  font-family: var(--headings);
+  font-size: 2.5rem;
+  color: var(--primary);
+  text-align: center;
+  padding: 3rem 1rem 1rem 1rem;
+}
+
+h1.products {
+  padding-top: 0;
+}
+
+h2 {
+  font-family: var(--headings);
+  font-size: 1.75rem;
+  text-align: center;
+  color: var(--primary);
+}
+
+.main-paragraph {
+  color: var(--text);
+  font-size: 1rem;
+  text-align: center;
+  padding: 0 1.5rem 0 1.5rem;
+}
+
+.main-image {
+  height: 700px;
+  background-image: url("../images/home-decor-main.jpg");
+  background-size: cover;
+  border-radius: 0 0 5px 5px;
+  box-shadow: rgba(217, 206, 199, 0.15) 0px 2px 8px 0px;
+  opacity: 0.9;
+}
+
+.card {
+  max-width: 350px;
+  border: none;
+  border-radius: 5px;
+  padding-bottom: 1rem;
+  background-color: #ffffff99;
+  box-shadow: rgba(217, 206, 199, 0.15) 0px 2px 8px 0px;
+  margin: 0 auto;
+}
+
+.btn-main {
+  margin: 4rem auto 1rem auto;
+}
+
+.btn {
+  display: block;
+  width: 180px;
+  background-color: #b37d4f;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  font-size: 1.125rem;
+  transition: background-color 0.3s ease-out;
+}
+
+.btn:hover {
+  background-color: #435e5bcc;
+  color: white;
+}
+
+h3 {
+  font-family: var(--headings);
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.card-img-top {
+  border-radius: 5px 5px 0 0;
+}
+
+.card-text {
+  color: var(--text);
+}
+
+.category {
+  font-weight: bold;
+}
+
+.price {
+  font-family: var(--headings);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d9cec7;
+  background-color: #e4dbd1;
+  background-color: #d6c1b2;
+  color: #383535;
+  flex-shrink: 0;
+  padding: 0.6rem;
+}
+
+.footer-item {
+  padding-right: 0.5rem;
+}
+
+.copy::before {
+  content: "\00A9";
+  padding-right: 0.25rem;
+}
+
+.footer-list {
+  margin: 0;
+  list-style: none;
+}
+
+/* media queries */
+
+@media (min-width: 768px) {
+  .main-wrapper {
+    flex-direction: row;
+  }
+
+  .navbar {
+    flex-direction: row;
+  }
+
+  .brand-logo {
+    margin-right: 3rem;
+    padding: 0.15rem 0;
+  }
+
+  .icons-container {
+    width: auto;
+    justify-content: flex-start;
+  }
+
+  .nav-icon {
+    margin-left: 1.5rem;
+  }
+
+  .content-container {
+    flex: 1;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .main-image {
+    height: auto;
+    flex: 1;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .links-container {
+    display: flex;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  .dropdown-menu {
+    display: none;
+  }
+
+  .main-prod-image {
+    margin-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  nav {
+    width: 85%;
+  }
+
+  .wrapper {
+    width: 85%;
+  }
+
+  .content-container {
+    flex: 3;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .main-image {
+    flex: 2;
+  }
+
+  .main-paragraph {
+    font-size: 1.125rem;
+    padding: 0 2rem 0 2rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  nav {
+    width: 80%;
+  }
+
+  .wrapper {
+    width: 80%;
+  }
+
+  .content-container {
+    flex: 2;
+  }
+
+  .main-image {
+    flex: 1;
+  }
+
+  .main-paragraph {
+    padding: 0 3rem 0 3rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  nav {
+    width: 70%;
+  }
+  .wrapper {
+    width: 70%;
+  }
+
+  .content-container {
+    flex: 3;
+  }
+
+  .main-image {
+    flex: 1;
+  }
+}
