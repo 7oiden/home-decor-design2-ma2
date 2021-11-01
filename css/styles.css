@@ -3,6 +3,7 @@
 html {
   height: 100%;
   box-sizing: border-box;
+  font-size: 1rem;
 }
 
 *,
@@ -16,8 +17,8 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  font-family: "quasimoda";
   font-family: var(--main);
+  font-weight: 400;
 }
 
 .flex-wrapper {
@@ -36,7 +37,6 @@ body {
 }
 
 header {
-  background-color: #5e4b43;
   background-color: #c3ae9f;
   background-color: var(--navbar);
   background-repeat: no-repeat;
@@ -65,45 +65,29 @@ header {
 }
 
 .nav-link {
-  font-size: 1.25rem;
+  font-family: "lato";
+  font-size: 1.125rem;
   color: var(--primary);
   margin-right: 1.5rem;
-  padding: 0;
+  padding: 0 0.25rem;
   position: relative;
+  top: 2px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.nav-link:hover {
+ opacity: 0.75;
 }
 
 .active-link {
-  font-weight: bold;
-}
+  border-bottom: 2px solid var(--text);
 
-.active-link::after {
-  content: "";
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  height: 2px;
-  background: var(--primary);
-}
-
-.nav-link::after {
-  content: "";
-  width: 0;
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  height: 2px;
-  transition: width 0.2s ease-in-out;
-  background: transparent;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-  background: var(--primary);
 }
 
 .nav-link:hover {
   color: var(--primary);
+  opacity: 0.75;
 }
 
 .icons-container {
@@ -114,12 +98,13 @@ header {
 }
 
 .nav-icon {
-  width: 3rem;
-  transition: scale 0.3s ease-in-out;
+  width: 2.75rem;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
 }
 
 .nav-icon:hover {
-  scale: 1.1;
+  opacity: 0.75;
 }
 
 .dropdown-menu {
@@ -160,7 +145,7 @@ header {
   border-radius: 5px 5px 0 0;
   background-color: #ffffff99;
   box-shadow: rgba(217, 206, 199, 0.15) 0px 2px 8px 0px;
-  padding-bottom: 2rem;
+  padding: 3rem 4rem 3rem 4rem;
 }
 
 .main-prod-image {
@@ -175,7 +160,6 @@ header {
 }
 
 .main-prod-image img {
-  border-radius: 10px;
   width: 100%;
   height: auto;
   filter: saturate(95%) brightness(103%) contrast(95%)
@@ -193,9 +177,9 @@ header {
 h1 {
   font-family: var(--headings);
   font-size: 2.5rem;
+  font-weight: 300;
   color: var(--primary);
-  text-align: center;
-  padding: 3rem 1rem 1rem 1rem;
+  padding-bottom: 1rem;
 }
 
 h1.products {
@@ -203,30 +187,38 @@ h1.products {
 }
 
 h2 {
-  font-family: var(--headings);
-  font-size: 1.75rem;
-  text-align: center;
+  font-family: var(--main);
+  font-size: 1.125rem;
   color: var(--primary);
+  font-weight: bold;
+  font-style: italic;
+  /* color: var(--text); */
+  /* text-decoration: underline; */
+}
+
+h2:nth-child(4) {
+  margin-top: 2rem;
 }
 
 .main-paragraph {
+  /* font-family: "cabin"; */
   color: var(--text);
   font-size: 1rem;
-  text-align: center;
-  padding: 0 1.5rem 0 1.5rem;
+  line-height: 1.6;
 }
 
 .main-image {
   height: 700px;
   background-image: url("../images/home-decor-main.jpg");
   background-size: cover;
+  background-position: center;
   border-radius: 0 0 5px 5px;
   box-shadow: rgba(217, 206, 199, 0.15) 0px 2px 8px 0px;
   opacity: 0.9;
 }
 
 .card {
-  max-width: 350px;
+  max-width: 400px;
   border: none;
   border-radius: 5px;
   padding-bottom: 1rem;
@@ -235,14 +227,15 @@ h2 {
   margin: 0 auto;
 }
 
-.btn-main {
-  margin: 4rem auto 1rem auto;
-}
-
 .btn {
+  font-family: "montserrat";
+  /* text-transform: uppercase; */
+  border-radius: 25px 0 25px 0;
   display: block;
   width: 180px;
-  background-color: #b37d4f;
+  margin-bottom: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   background-color: var(--accent);
   color: white;
   border: none;
@@ -253,6 +246,20 @@ h2 {
 .btn:hover {
   background-color: #435e5bcc;
   color: white;
+}
+
+.btn-main {
+  color: var(--primary);
+  margin: 3rem auto 1rem auto;
+  background-color: transparent;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 2px solid var(--primary);
+  border-radius: 0;
+}
+
+.btn-main:hover {
+  background-color: #435e5b;
 }
 
 h3 {
@@ -267,10 +274,13 @@ h3 {
 
 .card-text {
   color: var(--text);
+  margin-bottom: 2rem;
 }
 
 .category {
   font-weight: bold;
+  font-style: italic;
+  color: var(--text);
 }
 
 .price {
@@ -368,14 +378,15 @@ footer {
 }
 
 @media (min-width: 1200px) {
+  html {
+    font-size: 1.125rem;
+  }
+
   nav {
     width: 85%;
   }
 
-  .wrapper {
-    width: 85%;
-  }
-
+ 
   .content-container {
     flex: 3;
   }
@@ -390,45 +401,20 @@ footer {
 
   .main-paragraph {
     font-size: 1.125rem;
-    padding: 0 2rem 0 2rem;
   }
 }
 
 @media (min-width: 1400px) {
-  nav {
-    width: 80%;
-  }
-
   .wrapper {
-    width: 80%;
-  }
-
-  .content-container {
-    flex: 2;
-  }
-
-  .main-image {
-    flex: 1;
-  }
-
-  .main-paragraph {
-    padding: 0 3rem 0 3rem;
-  }
+    width: 85%;
+  } 
 }
 
 @media (min-width: 1600px) {
-  nav {
-    width: 70%;
+  .navbar {
+    width: 80%;
   }
   .wrapper {
-    width: 70%;
-  }
-
-  .content-container {
-    flex: 3;
-  }
-
-  .main-image {
-    flex: 1;
+    width: 75%;
   }
 }
