@@ -33,7 +33,7 @@ body {
 .wrapper {
   width: 95%;
   margin: 0 auto;
-  padding: 6rem 0;
+  padding: 3rem 0 6rem 0;
 }
 
 header {
@@ -47,7 +47,7 @@ header {
   width: 85%;
   flex-direction: column;
   margin: 0 auto;
-  padding: 0.6rem 0;
+  padding: 0.75rem 0;
 }
 
 .nav-left-container {
@@ -102,6 +102,10 @@ header {
   opacity: 1;
 }
 
+#hamburger {
+  width: 2.65rem;
+}
+
 .nav-icon:hover {
   opacity: 0.75;
 }
@@ -119,14 +123,10 @@ header {
   padding-left: 7.5%;
 }
 
-.dropdown-links-container a:hover {
-  border-bottom: 2px solid transparent;
-}
-
 .dropdown-links-container a {
   color: var(--primary);
   font-size: 1.125rem;
-  padding-left: 0.5rem;
+  padding: 0.25rem 0 0.25rem 0.5rem;
 }
 
 .main-wrapper {
@@ -135,33 +135,58 @@ header {
   padding-bottom: 6rem;
 }
 
-.products {
+.products-wrapper {
   padding-top: 3rem;
+  width: 95%;
 }
 
 .products-header {
-  text-align: left;
+  text-align: center;
   padding-top: 0;
 }
 
 .content-container {
   height: 100%;
-  min-height: 600px;
-  border-radius: 5px 5px 0 0;
+  min-height: 700px;
   background-color: #ffffff99;
   box-shadow: rgba(217, 206, 199, 0.15) 0px 2px 8px 0px;
-  padding: 3rem 4rem 3rem 4rem;
+  padding: 2rem 1.5rem 3rem 1.5rem;
+}
+
+.collection {
+  position: absolute;
+  z-index: 999;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 1rem 4rem 1.5rem 4rem;
+  border-radius: 3px;
+  background-color: #ffffffbf;
+}
+
+.collection-medium {
+  top: 7.5%;
+  left: 7.5%;
+  transform: translate(0);
+  border-radius: 3px;
+  background-color: #ffffffe6;
+  display: none;
+}
+
+.collection-small {
+  position: static;
+  transform: translate(0);
+  margin-bottom: 3rem;
 }
 
 .main-prod-image {
   margin-bottom: 3rem;
-  border: 15px;
   display: none;
+  position: relative;
 }
 
 .main-prod-image-small {
-  margin-bottom: 3rem;
-  border: 15px;
+  position: relative;
 }
 
 .main-prod-image img {
@@ -172,14 +197,13 @@ header {
 }
 
 .main-prod-image-small img {
-  border-radius: 10px;
   width: 100%;
   height: auto;
   filter: saturate(95%) brightness(103%) contrast(95%)
     drop-shadow(0px 8px 5px rgb(217 206 199 / 1));
 }
 
-h1 {
+h1, h2 {
   font-family: var(--headings);
   font-size: 2.5rem;
   font-weight: 300;
@@ -191,24 +215,21 @@ h1.products {
   padding-top: 0;
 }
 
-h2 {
-  font-family: var(--main);
+/* h2 {
+  font-family: "montserrat";
   font-size: 1.125rem;
   color: var(--primary);
-  font-weight: bold;
-  font-style: italic;
-  /* color: var(--text); */
-  /* text-decoration: underline; */
+  color: var(--text);
 }
 
 h2:nth-child(4) {
   margin-top: 2rem;
-}
+} */
 
 .main-paragraph {
-  /* font-family: "cabin"; */
   color: var(--text);
   font-size: 1rem;
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -217,7 +238,6 @@ h2:nth-child(4) {
   background-image: url("../images/home-decor-main.jpg");
   background-size: cover;
   background-position: center;
-  border-radius: 0 0 5px 5px;
   box-shadow: rgba(217, 206, 199, 0.15) 0px 2px 8px 0px;
   opacity: 0.9;
 }
@@ -234,17 +254,19 @@ h2:nth-child(4) {
 
 .btn {
   font-family: "montserrat";
+  font-weight: 400;
+  font-size: 1.125rem;
   /* text-transform: uppercase; */
-  border-radius: 25px 0 25px 0;
+  border-radius: 3px;
   display: block;
   width: 180px;
+  margin-top: 2rem;
   margin-bottom: 1rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
   background-color: var(--accent);
   color: white;
   border: none;
-  font-size: 1.125rem;
   transition: background-color 0.3s ease-out;
 }
 
@@ -253,9 +275,14 @@ h2:nth-child(4) {
   color: white;
 }
 
-.btn-main {
+.btn-prod {
+  margin-top: 0;
+}
+
+.btn-main, .btn-collection {
   color: var(--primary);
-  margin: 3rem auto 1rem auto;
+  font-weight: 500;
+  margin: 4rem auto 1rem auto;
   background-color: transparent;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -267,10 +294,15 @@ h2:nth-child(4) {
   background-color: #435e5b;
 }
 
+.btn-collection {
+  margin-top: 1rem;
+}
+
 h3 {
   font-family: var(--headings);
-  font-size: 2rem;
+  font-size: 1.875rem;
   color: var(--primary);
+  margin-bottom: 1rem;
 }
 
 .card-img-top {
@@ -279,11 +311,12 @@ h3 {
 
 .card-text {
   color: var(--text);
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .category {
-  font-weight: bold;
-  font-style: italic;
+  font-weight: 500;
   color: var(--text);
 }
 
@@ -296,7 +329,7 @@ h3 {
 
 footer {
   background-color: var(--footer);
-  background-color: #e6d3c5;
+  background-color: #e6d5ca;
   color: var(--text);
   flex-shrink: 0;
   padding: 1rem 0;
@@ -307,7 +340,7 @@ footer {
   flex-direction: column;
   width: 85%;
   margin: 0 auto;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: space-between;
 }
 
@@ -331,7 +364,7 @@ footer {
 
 .footer-icons {
   display: flex;
-  font-size: 1.75rem;
+  font-size: 2rem;
   list-style: none;
 }
 
@@ -362,11 +395,12 @@ footer {
 
 .footer-contact li {
   cursor: pointer;
+  display: flex;
+  align-items: baseline;
 }
 
-#contact {
-  font-weight: bold;
-  padding-bottom: 0.25rem;
+.footer-contact li:first-child {
+  padding-bottom: 0.35rem;
 }
 
 .fa-envelope,
@@ -405,14 +439,24 @@ footer {
 
   .content-container {
     flex: 1;
-    border-radius: 5px 0 0 5px;
   }
 
   .main-image {
     height: auto;
     flex: 1;
-    border-radius: 0 5px 5px 0;
   }
+
+  .main-prod-image-small {
+  margin-bottom: 3rem;
+}
+
+  .collection-medium {
+  display: block;
+}
+
+  .collection-small {
+  display: none;
+}
 
   .footer-container {
     flex-direction: row;
@@ -435,12 +479,22 @@ footer {
     display: flex;
   }
 
+
   #hamburger {
     display: none;
   }
 
   .dropdown-menu {
     display: none;
+  }
+
+  .content-container {
+    flex: 4;
+    padding: 3rem;
+  }
+
+  .main-image {
+    flex: 3;
   }
 
   .main-prod-image {
@@ -451,6 +505,10 @@ footer {
   .main-prod-image-small {
     margin-bottom: 6rem;
     display: none;
+  }
+
+  .btn-main {
+    margin-top: 4rem;
   }
 }
 
@@ -463,26 +521,22 @@ footer {
     width: 85%;
   }
 
-  .content-container {
-    flex: 3;
-  }
-
   h1 {
-    font-size: 3rem;
-  }
-
-  .main-image {
-    flex: 2;
-  }
-
-  .main-paragraph {
-    font-size: 1.125rem;
+    font-size: 2.875rem;
   }
 }
 
 @media (min-width: 1400px) {
   .wrapper {
     width: 85%;
+  }
+
+  .content-container {
+    flex: 4;
+  }
+
+  .main-image {
+    flex: 2;
   }
 }
 
