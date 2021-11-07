@@ -30,12 +30,6 @@ body {
   background-size: cover;
 }
 
-.wrapper {
-  width: 95%;
-  margin: 0 auto;
-  padding: 3rem 0 6rem 0;
-}
-
 header {
   background-color: #c3ae9f;
   background-color: var(--navbar);
@@ -129,6 +123,12 @@ header {
   padding: 0.25rem 0 0.25rem 0.5rem;
 }
 
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 0 6rem 0;
+}
+
 .main-wrapper {
   display: flex;
   flex-direction: column;
@@ -137,7 +137,7 @@ header {
 
 .products-wrapper {
   padding-top: 3rem;
-  width: 95%;
+  width: 100%;
 }
 
 .products-header {
@@ -159,9 +159,9 @@ header {
   top: 10%;
   left: 50%;
   transform: translate(-50%);
-  padding: 1rem 4rem 1.5rem 4rem;
+  padding: 1.5rem 4rem 1.5rem 4rem;
   border-radius: 3px;
-  background-color: #ffffffbf;
+  background-color: #ffffffd9;
 }
 
 .collection-medium {
@@ -169,7 +169,7 @@ header {
   left: 7.5%;
   transform: translate(0);
   border-radius: 3px;
-  background-color: #ffffffe6;
+  background-color: #ffffffd9;
   display: none;
 }
 
@@ -203,34 +203,34 @@ header {
     drop-shadow(0px 8px 5px rgb(217 206 199 / 1));
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: var(--headings);
-  font-size: 2.5rem;
-  font-weight: 300;
+  font-weight: 500;
   color: var(--primary);
   padding-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
 }
 
 h1.products {
   padding-top: 0;
 }
 
-/* h2 {
-  font-family: "montserrat";
-  font-size: 1.125rem;
-  color: var(--primary);
-  color: var(--text);
+h2 {
+  font-size: 2.125rem;
+  padding: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
 }
-
-h2:nth-child(4) {
-  margin-top: 2rem;
-} */
 
 .main-paragraph {
   color: var(--text);
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .main-image {
@@ -253,10 +253,9 @@ h2:nth-child(4) {
 }
 
 .btn {
-  font-family: "montserrat";
+  font-family: var(--cta);
   font-weight: 400;
   font-size: 1.125rem;
-  /* text-transform: uppercase; */
   border-radius: 3px;
   display: block;
   width: 180px;
@@ -279,7 +278,8 @@ h2:nth-child(4) {
   margin-top: 0;
 }
 
-.btn-main, .btn-collection {
+.btn-main,
+.btn-collection {
   color: var(--primary);
   font-weight: 500;
   margin: 4rem auto 1rem auto;
@@ -301,6 +301,7 @@ h2:nth-child(4) {
 h3 {
   font-family: var(--headings);
   font-size: 1.875rem;
+  font-weight: 500;
   color: var(--primary);
   margin-bottom: 1rem;
 }
@@ -447,16 +448,16 @@ footer {
   }
 
   .main-prod-image-small {
-  margin-bottom: 3rem;
-}
+    margin-bottom: 3rem;
+  }
 
   .collection-medium {
-  display: block;
-}
+    display: block;
+  }
 
   .collection-small {
-  display: none;
-}
+    display: none;
+  }
 
   .footer-container {
     flex-direction: row;
@@ -478,7 +479,6 @@ footer {
   .links-container {
     display: flex;
   }
-
 
   #hamburger {
     display: none;
